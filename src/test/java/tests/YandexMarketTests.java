@@ -5,14 +5,12 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static pages.ProductsComparisonPage.*;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
 import java.util.concurrent.TimeUnit;
 
 public class YandexMarketTests {
 
     public WebDriver driver;
-    public WebDriverWait wait;
     public CatalogPage catalogPage;
     public ElectronicsPage electronicsPage;
     public HomePage homePage;
@@ -27,7 +25,6 @@ public class YandexMarketTests {
     public void setupTest() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 4);
         driver.manage().window().maximize();
         catalogPage = new CatalogPage(driver);
         electronicsPage = new ElectronicsPage(driver);
